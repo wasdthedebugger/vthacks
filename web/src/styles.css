@@ -1047,3 +1047,305 @@ code {
   .onepager { break-inside: avoid; }
   .ai-block { background: none; border-left: 2px solid #666; }
 }
+
+/* =========================================================
+   WATCH CARD
+   ========================================================= */
+
+.watch-card {
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.watch-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.watch-card-title {
+  display: block;
+}
+
+.watch-device-name {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+.watch-connected {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.watch-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--good);
+  display: inline-block;
+}
+
+
+/* =========================================================
+   MAIN AREA
+   ========================================================= */
+
+.watch-main {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 20px 0;
+}
+
+
+/* =========================================================
+   WATCH VISUAL
+   ========================================================= */
+
+.watch-visual {
+  position: relative;
+  width: 105px;
+  height: 165px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+
+/* Straps */
+
+.watch-strap {
+  position: absolute;
+  width: 43px;
+  height: 58px;
+  background: #1c1c1e;
+}
+
+.watch-strap-top {
+  top: 0;
+  border-radius: 12px 12px 4px 4px;
+}
+
+.watch-strap-bottom {
+  bottom: 0;
+  border-radius: 4px 4px 12px 12px;
+}
+
+
+/* Watch body */
+
+.watch-body {
+  position: relative;
+  z-index: 2;
+  width: 72px;
+  height: 88px;
+  border-radius: 21px;
+  background: #151515;
+  border: 4px solid #303033;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Screen */
+
+.watch-screen {
+  position: absolute;
+  inset: 4px;
+  border-radius: 16px;
+  background: #050505;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.watch-time {
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.watch-today {
+  font-size: 5px;
+  font-weight: 700;
+  color: #888;
+  letter-spacing: 1px;
+}
+
+
+/* Activity ring */
+
+.watch-ring {
+  width: 39px;
+  height: 39px;
+  margin-top: 7px;
+  border-radius: 50%;
+
+  background:
+    conic-gradient(
+      var(--good) 0deg 260deg,
+      #252525 260deg 360deg
+    );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.watch-ring-inner {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #050505;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.watch-heart {
+  color: #ff375f;
+  font-size: 6px;
+}
+
+.watch-bpm {
+  color: #fff;
+  font-size: 9px;
+  line-height: 10px;
+}
+
+.watch-bpm-label {
+  color: #888;
+  font-size: 4px;
+}
+
+
+/* Digital crown */
+
+.watch-crown {
+  position: absolute;
+  right: -7px;
+  top: 21px;
+
+  width: 5px;
+  height: 15px;
+
+  border-radius: 0 4px 4px 0;
+  background: #444;
+}
+
+
+/* =========================================================
+   INFORMATION
+   ========================================================= */
+
+.watch-info {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.watch-info-item {
+  display: block;
+}
+
+.watch-label {
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+
+/* =========================================================
+   BATTERY
+   ========================================================= */
+
+.watch-battery-row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.watch-battery {
+  position: relative;
+
+  width: 50px;
+  height: 18px;
+
+  border: 2px solid currentColor;
+  border-radius: 5px;
+
+  padding: 2px;
+  box-sizing: border-box;
+}
+
+.watch-battery-fill {
+  width: 78%;
+  height: 100%;
+
+  border-radius: 2px;
+  background: var(--good);
+}
+
+.watch-battery-tip {
+  position: absolute;
+
+  right: -5px;
+  top: 4px;
+
+  width: 3px;
+  height: 7px;
+
+  border-radius: 0 2px 2px 0;
+  background: currentColor;
+}
+
+
+/* =========================================================
+   VALUES
+   ========================================================= */
+
+.watch-value {
+  font-size: 13px;
+}
+
+.watch-large-value {
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.watch-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-top: 13px;
+
+  border-top: 1px solid var(--border);
+
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.watch-synced {
+  color: var(--good);
+  font-weight: 600;
+}

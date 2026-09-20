@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { api } from "../api.js";
 import { MetricChart, MoodChart, SleepChart, shortDate, useThemeColors } from "../components/Charts.jsx";
 import { JournalTimeline } from "../components/Panels.jsx";
+import Watch from "../components/Watch.jsx";
 
 const MOOD_TAGS = ["low", "anxious", "tired", "flat", "ok", "calm", "rested", "motivated", "social", "irritable"];
 
@@ -57,12 +58,13 @@ export default function Portal({ session, onRefresh }) {
         />
       )}
 
+
       <div className="grid grid-2">
         <div className="stack">
           <CheckIn loggedToday={loggedToday} onSaved={load} />
           <JournalEntryForm onSaved={load} />
         </div>
-
+        
         <div className="stack">
           <div className="card">
             <div className="card-head">
@@ -87,6 +89,14 @@ export default function Portal({ session, onRefresh }) {
                 : "You haven't missed a day."}
             </p>
           </div>
+
+          <div className="card">
+            <div className="card-head">
+              <span className="card-title">Your wearable</span>
+            </div>
+            <Watch />
+          </div>
+        
 
           {points.length > 0 && (
             <>
