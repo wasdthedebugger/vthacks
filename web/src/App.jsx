@@ -10,6 +10,7 @@ import Report from "./pages/Report.jsx";
 import OnePager from "./pages/OnePager.jsx";
 import Import from "./pages/Import.jsx";
 import Portal from "./pages/Portal.jsx";
+import Notifications from "./pages/Notifications.jsx";
 
 const PUBLIC_PATHS = new Set(["/", "/login"]);
 
@@ -23,7 +24,12 @@ function TopBar({ label, sublabel, onSignOut }) {
         </span>
       </Link>
       <div className="topbar-right">
-        <span>{label}</span>
+         
+      <Link to="/notifications" className="topbar-notifications">
+        <button>🔔</button>
+      </Link>
+
+        <span>User: {label}</span>
         <button onClick={onSignOut}>Sign out</button>
       </div>
     </header>
@@ -85,6 +91,7 @@ export default function App() {
         <TopBar label={session.patient.name} sublabel="my tracking" onSignOut={signOut} />
         <Routes>
           <Route path="/" element={<Portal session={session} onRefresh={loadSession} />} />
+          <Route path="/notifications" element={<Notifications />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </>

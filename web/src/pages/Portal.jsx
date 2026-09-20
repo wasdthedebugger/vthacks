@@ -64,8 +64,9 @@ export default function Portal({ session, onRefresh }) {
           <CheckIn loggedToday={loggedToday} onSaved={load} />
           <JournalEntryForm onSaved={load} />
         </div>
-        
+
         <div className="stack">
+
           <div className="card">
             <div className="card-head">
               <span className="card-title">Your check-ins</span>
@@ -90,13 +91,21 @@ export default function Portal({ session, onRefresh }) {
             </p>
           </div>
 
+
+
           <div className="card">
             <div className="card-head">
               <span className="card-title">Your wearable</span>
             </div>
             <Watch />
           </div>
-        
+
+          <div className="card">
+            <div className="card-head">
+              <span className="card-title">Resting heart rate</span>
+            </div>
+            <MetricChart points={points} dataKey="resting_hr" name="Resting HR" unit="bpm" color={colors.series2} />
+          </div>
 
           {points.length > 0 && (
             <>
@@ -108,7 +117,6 @@ export default function Portal({ session, onRefresh }) {
                   <MoodChart points={points} />
                 </div>
               </div>
-
               <div className="card">
                 <div className="card-head">
                   <span className="card-title">Sleep</span>
@@ -117,13 +125,6 @@ export default function Portal({ session, onRefresh }) {
                 <div className="chart-scroll">
                   <SleepChart points={points} />
                 </div>
-              </div>
-
-              <div className="card">
-                <div className="card-head">
-                  <span className="card-title">Resting heart rate</span>
-                </div>
-                <MetricChart points={points} dataKey="resting_hr" name="Resting HR" unit="bpm" color={colors.series2} />
               </div>
             </>
           )}
@@ -136,7 +137,7 @@ export default function Portal({ session, onRefresh }) {
           <span className="card-note">{journals.length} entries</span>
         </div>
         <JournalTimeline
-          journals={journals}
+          journals={journals} 
           moodLogs={moodLogs}
           emptyText="Nothing written yet — your first entry can be a sentence."
         />
@@ -245,15 +246,15 @@ function JournalEntryForm({ onSaved }) {
   return (
     <div className="card">
       <div className="card-head">
-        <span className="card-title">Write something</span>
-        <span className="card-note">{text.trim() ? `${text.trim().length} characters` : "optional"}</span>
+        <span className="card-title">Journal Entry</span>
+        <span className="card-note">{text.trim() ? `${text.trim().length} characters` : ""}</span>
       </div>
       <form onSubmit={submit}>
         <textarea
           value={text}
           onChange={(e) => setText(e.target.value)}
-          placeholder="However the day went — a sentence is enough."
-          style={{ minHeight: 120 }}
+          placeholder="Note your thoughts and feelings. You could write about your day, your emotions, or anything that's on your mind. Feel free to express yourself without judgment. This is private and only shared with your clinician."
+          style={{ minHeight: 890 }}
         />
         {error && <div className="error-box" style={{ marginTop: "0.75rem" }}>{error}</div>}
         <div className="btn-row" style={{ marginTop: "0.75rem" }}>

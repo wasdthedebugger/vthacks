@@ -86,9 +86,9 @@ export default function OnePager() {
         </ol>
       </section>
 
-      <p className="disclaimer">
+      {/* <p className="disclaimer">
         {op.disclaimer} Generated {new Date(op.generated_at.replace(" ", "T") + "Z").toLocaleString("en-GB")} · {op.model_used}
-      </p>
+      </p> */}
     </main>
   );
 }

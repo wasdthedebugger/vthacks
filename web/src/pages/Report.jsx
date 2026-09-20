@@ -48,7 +48,7 @@ export default function Report() {
               day: "numeric", month: "short", hour: "2-digit", minute: "2-digit",
             })}
           </p>
-          <p className="page-sub muted">Model: {report.model_used}</p>
+          {/* <p className="page-sub muted">Model: {report.model_used}</p> */}
         </div>
         <div className="btn-row no-print">
           <Link to={`/reports/${report.id}/one-pager`} className="btn btn-primary">
